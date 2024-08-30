@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSECO SafePatch Solution</title>
+    <link rel="stylesheet" href="styleinsert.css">
+</head>
+<body>
+
+    <header>
+        <h1>PSECO SafePatch Solution</h1>
+    </header>
+
+
+    <div class="container">
+        <h2>Code Validation</h2>
+    
+        <textarea id="codeInput" placeholder="Enter your code here or upload your code below..."></textarea>
+    
+        <input type="file" id="fileInput" accept=".txt,.js,.py,.java,.cpp">
+    
+        <button id="submitBtn">Submit Code</button>
+        <a href="pagvulnerabilities.html"><button id="nextScreenBtn" class="next-btn">Next Screen</button></a>
+    
+        <div id="messageDisplay" class="hidden">
+            <p id="messageText"></p>
+        </div>
+    </div>
+    
+
+    <footer>
+        Powered by LabESC | UNIRIO
+    </footer>
+
+    <script src="insertcode.js"></script>
+</body>
+</html>

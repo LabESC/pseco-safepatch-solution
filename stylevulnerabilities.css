@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header {
+    background-color: #4a90e2;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 2px solid #dfe6f3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.directory-btn,
+.process-btn {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    display: block;
+    width: fit-content;
+}
+
+.directory-btn:hover,
+.process-btn:hover {
+    background-color: #003e74;
+}
+
+main {
+    flex: 1; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vulnerability-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vulnerability-level {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.critical {
+    background-color: #d46340; 
+}
+
+.high {
+    background-color: #e67e22; 
+}
+
+.medium {
+    background-color: #f1c40f; 
+    color: #333; 
+}
+
+.low {
+    background-color: #4a90e2;
+}
+
+.vulnerability-level:hover {
+    opacity: 0.8;
+}
+
+.vulnerability-details {
+    list-style: none;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #dfe6f3;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: none; 
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+footer {
+    background-color: #4a90e2; 
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer #powered {
+    flex: 1; 
+    text-align: left;
+}
+
+footer .button-container {
+    display: flex;
+    gap: 10px;
+}
+
+footer button {
+    padding: 10px 20px;
+    background-color: #7ab8ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #003e74;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}

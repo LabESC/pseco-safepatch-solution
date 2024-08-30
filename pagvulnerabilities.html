@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSECO SafePatch Solution</title>
+    <link rel="stylesheet" href="stylevulnerabilities.css">
+</head>
+
+<body>
+    <header>
+        <h1>PSECO SafePatch Solution</h1>
+    </header>
+
+    <main>
+        <button class="directory-btn">Select Directory</button>
+        <button class="process-btn">Process</button>
+        <section class="vulnerability-overview">
+            <div class="vulnerability-level critical" data-level="critical">
+                Critical: <span id="criticalCount">0</span>
+            </div>
+            <ul class="vulnerability-details" id="criticalDetails"></ul>
+
+            <div class="vulnerability-level high" data-level="high">
+                High: <span id="highCount">0</span>
+            </div>
+            <ul class="vulnerability-details" id="highDetails"></ul>
+
+            <div class="vulnerability-level medium" data-level="medium">
+                Medium: <span id="mediumCount">0</span>
+            </div>
+            <ul class="vulnerability-details" id="mediumDetails"></ul>
+
+            <div class="vulnerability-level low" data-level="low">
+                Low: <span id="lowCount">0</span>
+            </div>
+            <ul class="vulnerability-details" id="lowDetails"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p id="powered">Powered by LabESC | UNIRIO</p>
+        <div class="button-container">
+            <button id="downloadReportBtn">Download Report</button>
+            <button id="goToComparisonBtn">
+                <a href="pagerror.html">Go to Code Comparison</a>
+            </button>
+        </div>
+    </footer>
+    
+    <script src="scriptvulnerabilities.js"></script>
+</body>
+
+</html>

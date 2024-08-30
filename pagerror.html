@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSECO SafePatch Solution</title>
+    <link rel="stylesheet" href="styleerror.css">
+</head>
+
+<body>
+    <header>
+        <h1>PSECO SafePatch Solution</h1>
+        <a href="insertcode.html"><button id="addCodeBtn">Add New Code</button></a>
+    </header>
+
+    <main>
+        <section class="code-container">
+            <div class="code-box">
+                <h2>Code with Errors</h2>
+                <textarea id="errorCode" placeholder="Insert code with errors here..."></textarea>
+            </div>
+            <div class="code-box">
+                <h2>Corrected Code</h2>
+                <textarea id="correctedCode" placeholder="Corrected code will appear here..."></textarea>
+                <button id="downloadBtn">Download Corrected Code</button>
+            </div>
+        </section>
+
+        <section class="info-container">
+            <h3>Errors Found:</h3>
+            <ul id="errorList">
+                <li>No errors detected yet.</li>
+            </ul>
+
+            <h3>Changes Made:</h3>
+            <ul id="changesList">
+                <li>No changes made yet.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Powered by LabESC | UNIRIO</p>
+    </footer>
+
+    <script src="scripterror.js"></script>
+</body>
+
+</html>
