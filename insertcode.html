@@ -13,25 +13,40 @@
         <h1>PSECO SafePatch Solution</h1>
     </header>
 
-
     <div class="container">
-        <h2>Code Validation</h2>
-    
-        <textarea id="codeInput" placeholder="Enter your code here or upload your code below..."></textarea>
-    
-        <input type="file" id="fileInput" accept=".txt,.js,.py,.java,.cpp">
-    
-        <button id="submitBtn">Submit Code</button>
-        <a href="pagvulnerabilities.html"><button id="nextScreenBtn" class="next-btn">Next Screen</button></a>
-    
+        <!-- Guia de passos com números -->
+        <div class="steps">
+            <span class="step active">1</span>
+            <span class="step">2</span>
+            <span class="step">3</span>
+        </div>
+
+        <h2>Code Submission</h2>
+        
+        <!-- Botão para submissão do arquivo .sarif -->
+        <button id="uploadSarifBtn" class="file-btn">CHOOSE .sarif FILE</button>
+        <input type="file" id="sarifInput" accept=".sarif" hidden>
+        
+        <!-- Botão para submissão do arquivo .ear -->
+        <button id="uploadEarBtn" class="file-btn">CHOOSE .ear FILE</button>
+        <input type="file" id="earInput" accept=".ear" hidden>
+        
+        <!-- Contêiner para os botões de submissão -->
+        <div class="submit-btn-container">
+            <!-- Botão para submeter os arquivos -->
+            <button id="submitFilesBtn" class="submit-btn">Submit Files</button>
+        </div>
+        
+        <!-- Mensagem de feedback -->
         <div id="messageDisplay" class="hidden">
             <p id="messageText"></p>
         </div>
     </div>
-    
 
     <footer>
         Powered by LabESC | UNIRIO
+        <!-- Botão para ir para a próxima tela dentro do footer -->
+        <button id="nextScreenBtn" class="next-btn" disabled>Go to VULNERABILITIES</button>
     </footer>
 
     <script src="insertcode.js"></script>

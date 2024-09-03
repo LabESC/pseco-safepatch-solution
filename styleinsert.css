@@ -1,3 +1,4 @@
+/* Reset e estilo geral */
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url('planodefundo.jpg'); /* Adiciona uma imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
 }
 
 header {
@@ -21,50 +26,101 @@ header {
 
 .container {
     flex: 1;
-    background: white;
+    background: rgba(255, 255, 255, 0.9); /* Transparência para melhor visualização do conteúdo */
     padding: 20px;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 500px;
     text-align: center;
+    position: relative;
 }
 
-
-textarea {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: none;
-    font-size: 14px;
-}
-
-input[type="file"] {
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px 15px;
-    margin: 5px;
+/* Estilo dos botões de upload */
+.file-btn {
+    font-weight: bolder;
+    background-color: #4a90e2; /* Azul */
+    color: white;
     border: none;
+    padding: 10px 15px;
+    margin: 10px 0; /* Espaçamento entre os botões */
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    width: 80%; /* Ocupa 80% da largura do box */
+}
+
+.file-btn:hover {
+    background-color: #357ab8; /* Azul mais escuro no hover */
+}
+
+/* Ajusta os botões de submissão para estarem no final do box */
+.submit-btn-container {
+    position: absolute;
+    bottom: 20px; /* Espaçamento do final do box */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Ocupa toda a largura disponível */
+    display: flex;
+    justify-content: center;
+}
+
+/* Botão de submissão de arquivos */
+.submit-btn {
+    font-weight: bolder;
+    background-color: #4CAF50; /* Verde */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     color: white;
 }
 
-#submitBtn {
-    background-color: #4a90e2; 
+.submit-btn:hover {
+    background-color: #388E3C; /* Efeito de hover para o botão verde */
 }
 
+/* Estilo das bolinhas dos passos */
+.steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.step.active {
+    background-color: #4a90e2;
+}
+
+/* Botão de próxima tela */
 .next-btn {
-    position: fixed;
-    bottom: 60px;
+    font-weight: bolder;
+    background-color: #4CAF50; /* Verde */
+    position: absolute;
+    bottom: 10px; /* Posicionado dentro do footer */
     right: 20px;
-    background-color: #4a90e2; 
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.next-btn:hover {
+    background-color: #388E3C; /* Efeito de hover para o botão verde */
 }
 
 .hidden {
@@ -75,16 +131,6 @@ footer {
     background-color: #4a90e2;
     color: white;
     text-align: center;
-    padding: 17px;
-}
-
-.hidden {
-    display: none;
-}
-
-#messageDisplay {
-    margin-top: 10px;
-    color: #000000; 
-    font-size: 24px;
-    font-weight: bolder;
+    padding: 20px;
+    position: relative; /* Para permitir posicionamento do botão dentro do footer */
 }
