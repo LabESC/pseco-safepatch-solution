@@ -8,16 +8,19 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
     background-color: #f0f8ff;
     color: #333;
+    background-image: url('planodefundo.jpg'); /* Adicione seu caminho da imagem aqui */
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
     background-color: #4a90e2;
     color: #ffffff;
     padding: 10px 20px;
-    border-bottom: 2px solid #dfe6f3;
+    border-bottom: 2px solid #4a90e2;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -28,30 +31,73 @@ header h1 {
     margin: 0;
 }
 
-.directory-btn,
-.process-btn {
+.back-btn {
+    position: absolute;
+    top: 60px; /* Ajuste conforme necessário */
+    left: 20px;
     padding: 10px 20px;
     background-color: #4a90e2;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 10px 0;
-    display: block;
-    width: fit-content;
 }
 
-.directory-btn:hover,
-.process-btn:hover {
+.back-btn:hover {
     background-color: #003e74;
 }
 
 main {
-    flex: 1; 
+    flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* Ajuste a margem conforme necessário */
+    position: relative; /* Para permitir posicionar a caixa ao fundo */
+}
+
+.step-box {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.step.active {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.total-errors {
+    color: #ffffff;
+    background-color: #5a5a5a; /* Cor cinza */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .vulnerability-overview {
@@ -67,19 +113,20 @@ main {
     font-size: 16px;
     color: #fff;
     transition: background-color 0.3s;
+    position: relative;
 }
 
 .critical {
-    background-color: #d46340; 
+    background-color: #d46340;
 }
 
 .high {
-    background-color: #e67e22; 
+    background-color: #e67e22;
 }
 
 .medium {
-    background-color: #f1c40f; 
-    color: #333; 
+    background-color: #f1c40f;
+    color: #333;
 }
 
 .low {
@@ -102,23 +149,52 @@ main {
     overflow-y: auto;
 }
 
+.vulnerability-details li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dfe6f3;
+    padding: 10px 0;
+}
+
+.vulnerability-details li:last-child {
+    border-bottom: none;
+}
+
+.vulnerability-details li .error-description {
+    margin-right: 10px;
+}
+
+.vulnerability-details li button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vulnerability-details li button:hover {
+    background-color: #388e3c;
+}
+
 footer {
-    background-color: #4a90e2; 
+    background-color: #4a90e2;
     color: white;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza o texto no footer */
     align-items: center;
-}
-
-footer #powered {
-    flex: 1; 
-    text-align: left;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
 }
 
 footer .button-container {
     display: flex;
     gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
 }
 
 footer button {

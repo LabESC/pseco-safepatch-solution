@@ -14,42 +14,50 @@
         <h1>PSECO SafePatch Solution</h1>
     </header>
 
+    <button id="backBtn" class="back-btn">Back</button>
+
     <main>
-        <button class="directory-btn">Select Directory</button>
-        <button class="process-btn">Process</button>
+        <!-- Guia de passos com números -->
+        <div class="steps">
+            <div class="step-box">
+                <span class="step">1</span>
+                <span class="step active">2</span>
+                <span class="step">3</span>
+            </div>
+        </div>
+
+        <!-- Total de erros com fundo cinza -->
+        <div class="total-errors">
+            Total Errors: <span id="totalErrors">0</span>
+        </div>
+
         <section class="vulnerability-overview">
             <div class="vulnerability-level critical" data-level="critical">
                 Critical: <span id="criticalCount">0</span>
+                <ul class="vulnerability-details" id="criticalDetails"></ul>
             </div>
-            <ul class="vulnerability-details" id="criticalDetails"></ul>
-
+            
             <div class="vulnerability-level high" data-level="high">
                 High: <span id="highCount">0</span>
+                <ul class="vulnerability-details" id="highDetails"></ul>
             </div>
-            <ul class="vulnerability-details" id="highDetails"></ul>
-
+            
             <div class="vulnerability-level medium" data-level="medium">
                 Medium: <span id="mediumCount">0</span>
+                <ul class="vulnerability-details" id="mediumDetails"></ul>
             </div>
-            <ul class="vulnerability-details" id="mediumDetails"></ul>
-
+            
             <div class="vulnerability-level low" data-level="low">
                 Low: <span id="lowCount">0</span>
+                <ul class="vulnerability-details" id="lowDetails"></ul>
             </div>
-            <ul class="vulnerability-details" id="lowDetails"></ul>
         </section>
     </main>
 
     <footer>
         <p id="powered">Powered by LabESC | UNIRIO</p>
-        <div class="button-container">
-            <button id="downloadReportBtn">Download Report</button>
-            <button id="goToComparisonBtn">
-                <a href="pagerror.html">Go to Code Comparison</a>
-            </button>
-        </div>
     </footer>
-    
+
     <script src="scriptvulnerabilities.js"></script>
 </body>
 

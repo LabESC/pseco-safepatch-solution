@@ -107,7 +107,6 @@ header {
 
 /* Botão de próxima tela */
 .next-btn {
-    font-weight: bolder;
     background-color: #4CAF50; /* Verde */
     position: absolute;
     bottom: 10px; /* Posicionado dentro do footer */
