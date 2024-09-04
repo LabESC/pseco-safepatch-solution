@@ -1,5 +1,5 @@
 // Defina a URL da página de correção aqui
-const fixPageURL = 'pagerror.html'; // Substitua por sua URL desejada
+const fixPageURL = 'fixpage.html'; // Substitua por sua URL desejada
 
 document.querySelectorAll('.vulnerability-level').forEach(level => {
     level.addEventListener('click', () => {

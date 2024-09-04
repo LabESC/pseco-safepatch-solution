@@ -83,6 +83,7 @@ main {
     justify-content: center;
     margin: 0 5px;
     font-size: 14px;
+    font-weight: bolder;
 }
 
 .step.active {
@@ -214,3 +215,36 @@ footer a {
     color: white;
     text-decoration: none;
 }
+
+/* ... Seu CSS existente ... */
+
+.vulnerability-details li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dfe6f3;
+    padding: 10px 0;
+}
+
+.vulnerability-details li:last-child {
+    border-bottom: none;
+}
+
+.error-description {
+    margin-right: 10px; /* Espaço entre o texto e o botão */
+    flex: 1; /* Permite que o texto ocupe o espaço restante */
+}
+
+.fix-btn {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fix-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Ajuste o CSS existente conforme necessário */
