@@ -1,5 +1,5 @@
 // Defina a URL da página de correção aqui
-const fixPageURL = 'fixpage.html'; // Substitua por sua URL desejada
+const fixPageURL = 'pagerror.html'; // Substitua por sua URL desejada
 
 document.querySelectorAll('.vulnerability-level').forEach(level => {
     level.addEventListener('click', () => {
@@ -40,17 +40,37 @@ const vulnerabilities = {
     high: [
         'SQL Injection found in login module',
         'Sensitive data exposure',
-        'Broken authentication mechanism'
+        'Broken authentication mechanism',
+        'Improper error handling',
+        'Hardcoded credentials',
+        'Race condition vulnerability',
+        'Information disclosure',
+        'Insufficient logging',
+        'Cross-Site Request Forgery (CSRF)',
+        'Insecure direct object reference'
     ],
     medium: [
         'Cross-Site Scripting (XSS) in comments',
         'Open Redirect issue',
-        'Deprecated API usage'
+        'Deprecated API usage',
+        'Session fixation',
+        'URL manipulation',
+        'Insecure session management',
+        'Insecure deserialization'
     ],
     low: [
         'Information exposure in error messages',
         'Cookie without HttpOnly flag',
-        'Minor performance issue'
+        'Minor performance issue',
+        'Missing security headers',
+        'Insecure random number generator',
+        'Minor data validation issues',
+        'Use of weak cryptographic algorithms',
+        'Unnecessary HTTP methods enabled',
+        'Improper error message formatting',
+        'Unrestricted file upload',
+        'Insufficient input validation',
+        'Unprotected administrative interfaces'
     ]
 };
 

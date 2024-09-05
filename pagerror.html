@@ -12,32 +12,45 @@
 <body>
     <header>
         <h1>PSECO SafePatch Solution</h1>
-        <a href="insertcode.html"><button id="addCodeBtn">Add New Code</button></a>
+        <a href="telainicial.html"><button id="startFixBtn">Start New Fix</button></a>
     </header>
+
+    <a href="pagvulnerabilities.html"><button id="backBtn">Back</button></a>
+
+    <div class="step-guide">
+        <div class="step-box">
+            <div class="step">1</div>
+            <div class="step">2</div>
+            <div class="step active">3</div>
+        </div>
+    </div>
 
     <main>
         <section class="code-container">
             <div class="code-box">
-                <h2>Code with Errors</h2>
-                <textarea id="errorCode" placeholder="Insert code with errors here..."></textarea>
+                <h2 id="errors">Original Code</h2>
+                <pre id="errorCode" class="code-display">
+public class Main {
+    public static void main(String[] args) {
+<span class="error-line">                  int[] arr = new int[5]; // Error: Buffer overflow</span>
+<span class="error-line">                  arr[5] = 10; // Accessing out of bounds</span>         System.out.println("This line may never execute.");
+    }
+}
+                </pre>
             </div>
             <div class="code-box">
-                <h2>Corrected Code</h2>
-                <textarea id="correctedCode" placeholder="Corrected code will appear here..."></textarea>
-                <button id="downloadBtn">Download Corrected Code</button>
+                <h2 id="correctedback">New Code</h2>
+                <pre id="correctedCode" class="code-display">
+public class Main {
+    public static void main(String[] args) {
+<span class="corrected-line">   int[] arr = new int[5]; // Fixed: Ensure index is within bounds</span>
+<span class="corrected-line">   if (arr.length > 5) {</span>
+<span class="corrected-line">    arr[4] = 10; // Corrected index</span>  System.out.println("This line is safe.");
+    }
+}
+                </pre>
+                <button id="copyBtn">Copy Corrected Code</button>
             </div>
-        </section>
-
-        <section class="info-container">
-            <h3>Errors Found:</h3>
-            <ul id="errorList">
-                <li>No errors detected yet.</li>
-            </ul>
-
-            <h3>Changes Made:</h3>
-            <ul id="changesList">
-                <li>No changes made yet.</li>
-            </ul>
         </section>
     </main>
 

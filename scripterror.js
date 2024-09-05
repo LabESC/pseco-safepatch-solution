@@ -8,3 +8,16 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
     a.click();
     window.URL.revokeObjectURL(url);
 });
+
+document.getElementById('backBtn').addEventListener('click', () => {
+    window.history.back();
+});
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+    const correctedCode = document.getElementById('correctedCode').value;
+    navigator.clipboard.writeText(correctedCode).then(() => {
+        alert('Corrected code copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+});
