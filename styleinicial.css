@@ -121,7 +121,7 @@ main > a {
 
 #description-section {
     margin-bottom: 20px;
-    text-align: left;
+    text-align: justify;
 }
 
 #description-section.hidden {

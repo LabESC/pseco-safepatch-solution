@@ -1,11 +1,15 @@
-// Defina a URL da página de correção aqui
-const fixPageURL = 'pagerror.html'; // Substitua por sua URL desejada
+const fixPageURL = 'pagerror.html';
 
 document.querySelectorAll('.vulnerability-level').forEach(level => {
+    const arrow = document.createElement('span');
+    arrow.classList.add('arrow');
+    arrow.textContent = '▼';
+    level.appendChild(arrow);
+
     level.addEventListener('click', () => {
         const levelName = level.dataset.level;
         const details = document.getElementById(`${levelName}Details`);
-        
+
         if (details) {
             const items = vulnerabilities[levelName];
             console.log(`Displaying details for ${levelName}:`, items);
@@ -16,9 +20,11 @@ document.querySelectorAll('.vulnerability-level').forEach(level => {
                     <button class="fix-btn" onclick="goToFixPage('${levelName}', ${index})">Fix</button>
                 </li>
             `).join('');
-            
-            // Alternar a exibição dos detalhes
-            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+
+            const isExpanded = details.style.display === 'block';
+            details.style.display = isExpanded ? 'none' : 'block';
+            arrow.textContent = isExpanded ? '▼' : '▲'; 
+            arrow.classList.toggle('up', !isExpanded); 
         } else {
             console.error(`No element found with ID: ${levelName}Details`);
         }
@@ -26,7 +32,6 @@ document.querySelectorAll('.vulnerability-level').forEach(level => {
 });
 
 function goToFixPage(levelName, index) {
-    // Construir o URL da página de correção com parâmetros para identificar o erro
     const url = `${fixPageURL}?level=${levelName}&index=${index}`;
     window.location.href = url;
 }
@@ -59,18 +64,31 @@ const vulnerabilities = {
         'Insecure deserialization'
     ],
     low: [
-        'Information exposure in error messages',
-        'Cookie without HttpOnly flag',
-        'Minor performance issue',
-        'Missing security headers',
-        'Insecure random number generator',
-        'Minor data validation issues',
-        'Use of weak cryptographic algorithms',
-        'Unnecessary HTTP methods enabled',
-        'Improper error message formatting',
-        'Unrestricted file upload',
-        'Insufficient input validation',
-        'Unprotected administrative interfaces'
+        'Build Misconfiguration: External Maven Dependency Repository',
+        'Hidden Field',
+        'Overly Broad Catch',
+        'System Information Leak: Internal',
+        'Byte Array to String Conversion',
+        'Comparison of Boxed Primitive Types',
+        'Constructor Invokes Overridable Function',
+        'Non-Synchronized Method Overrides Synchronized Method',
+        'String Comparison of Float',
+        'Cross-Site Request Forgery',
+        'Denial of Service',
+        'Denial of Service: StringBuilder',
+        'Hardcoded Domain in HTML',
+        'J2EE Misconfiguration: Incomplete Error Handling',
+        'Missing XML Validation',
+        'Poor Error Handling: Overly Broad Catch', 
+        'Poor Style: Non-final Public Static Field', 
+        'Race Condition: Format Flaw',
+        'SQL Injection',
+        'Struts: Form Does Not Extend Validation Class',
+        'Struts: Plugin Framework Not In Use',
+        'Struts: Unused Action Form',
+        'Struts: Validator Turned Off',
+        'System Information Leak: HTML Comment in JSP',
+        'Unchecked Return Value'
     ]
 };
 
