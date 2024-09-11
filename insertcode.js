@@ -18,7 +18,6 @@ function handleFileSubmission() {
     const sarifFile = sarifInput.files[0];
     const earFile = earInput.files[0];
 
-    // Exibir uma mensagem se ambos os arquivos forem submetidos, mas não bloquear o progresso
     if (sarifFile && earFile) {
         messageText.textContent = 'Both files have been submitted successfully.';
     }
