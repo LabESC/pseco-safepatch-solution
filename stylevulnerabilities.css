@@ -177,6 +177,18 @@ main {
 
 .vulnerability-details {
     list-style: none;
+    background-color: #ffffff00;
+    padding: 10px;
+    border: 1px solid #dfe6f300;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: none; 
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#lowDetails {    
+    list-style: none;
     background-color: #ffffff;
     padding: 10px;
     border: 1px solid #dfe6f3;

@@ -18,14 +18,15 @@ function handleFileSubmission() {
     const sarifFile = sarifInput.files[0];
     const earFile = earInput.files[0];
 
+    // Exibir uma mensagem se ambos os arquivos forem submetidos, mas não bloquear o progresso
     if (sarifFile && earFile) {
         messageText.textContent = 'Both files have been submitted successfully.';
-        messageDisplay.classList.remove('hidden');
-        setTimeout(() => {
-            window.location.href = 'pagvulnerabilities.html'; 
-        }, 2000);
-    } else {
-        messageText.textContent = 'Please submit both .sarif and .ear files to proceed.';
-        messageDisplay.classList.remove('hidden');
     }
+
+    messageDisplay.classList.remove('hidden');
+
+    setTimeout(() => {
+        window.location.href = 'pagvulnerabilities.html'; 
+    }, 0);
 }
+
