@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSECO SafePatch Solution</title>
     <link rel="stylesheet" href="styleerror.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="labesc.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -29,26 +29,66 @@
     <main>
         <section class="code-container">
             <div class="code-box">
+                <span class="code-label">web.xml</span>
                 <h2 id="errors">Original Code</h2>
                 <pre id="errorCode" class="code-display">
-public class Main {
-    public static void main(String[] args) {
-<span class="error-line">                  int[] arr = new int[5]; // Error: Buffer overflow</span>
-<span class="error-line">                  arr[5] = 10; // Accessing out of bounds</span>         System.out.println("This line may never execute.");
-    }
-}
+    &lt;resource-ref id="ResourceRef_1407259999882"&gt;
+        &lt;description/&gt;
+        &lt;res-ref-name&gt;url/www3Ref&lt;/res-ref-name&gt;
+        &lt;res-type&gt;java.net.URL&lt;/res-type&gt;
+        &lt;res-auth&gt;Container&lt;/res-auth&gt;
+        &lt;res-sharing-scope&gt;Shareable&lt;/res-sharing-scope&gt;
+    &lt;/resource-ref&gt;
+
+    &lt;resource-ref id="ResourceRef_1410196045078"&gt;
+        &lt;description/&gt;
+        &lt;res-ref-name&gt;url/wwwsbsegurosRef&lt;/res-ref-name&gt;
+        &lt;res-type&gt;java.net.URL&lt;/res-type&gt;
+        &lt;res-auth&gt;Container&lt;/res-auth&gt;
+        &lt;res-sharing-scope&gt;Shareable&lt;/res-sharing-scope&gt;
+    &lt;/resource-ref&gt;
+
+    &lt;resource-ref id="ResourceRef_1410373441332"&gt;
+        &lt;description/&gt;
+        &lt;res-ref-name&gt;jdbc/dspApplication&lt;/res-ref-name&gt;
+        &lt;res-type&gt;javax.sql.DataSource&lt;/res-type&gt;
+        &lt;res-auth&gt;Container&lt;/res-auth&gt;
+        &lt;res-sharing-scope&gt;Shareable&lt;/res-sharing-scope&gt;
+    &lt;/resource-ref&gt;
+    <p class="error-line"> --missing code--</p>
                 </pre>
             </div>
             <div class="code-box">
+                <span class="code-label">web.xml</span> 
                 <h2 id="correctedback">New Code</h2>
                 <pre id="correctedCode" class="code-display">
-public class Main {
-    public static void main(String[] args) {
-<span class="corrected-line">   int[] arr = new int[5]; // Fixed: Ensure index is within bounds</span>
-<span class="corrected-line">   if (arr.length > 5) {</span>
-<span class="corrected-line">    arr[4] = 10; // Corrected index</span>  System.out.println("This line is safe.");
-    }
-}
+    &lt;resource-ref id="ResourceRef_1410373441333"&gt;
+        &lt;description/&gt;
+        &lt;res-ref-name&gt;eis/CICSConnectionFactoryRef&lt;/res-ref-name&gt;
+        &lt;res-type&gt;javax.resource.cci.ConnectionFactory&lt;/res-type&gt;
+        &lt;res-auth&gt;Container&lt;/res-auth&gt;
+        &lt;res-sharing-scope&gt;Shareable&lt;/res-sharing-scope&gt;
+    &lt;/resource-ref&gt; 
+    <span class="corrected-line">
+    &lt;session-config&gt;
+        &lt;session-timeout&gt;20&lt;/session-timeout&gt;
+    &lt;/session-config&gt;
+
+    &lt;error-page&gt;
+        &lt;exception-type&gt;java.lang.Throwable&lt;/exception-type&gt;
+        &lt;location&gt;/error.jsp&lt;/location&gt;
+    &lt;/error-page&gt;
+
+    &lt;error-page&gt;
+        &lt;error-code&gt;404&lt;/error-code&gt;
+        &lt;location&gt;/error.jsp&lt;/location&gt;
+    &lt;/error-page&gt;
+
+    &lt;error-page&gt;
+        &lt;error-code&gt;500&lt;/error-code&gt;
+        &lt;location&gt;/error.jsp&lt;/location&gt;
+    &lt;/error-page&gt;
+    </span>
                 </pre>
                 <button id="copyBtn">Copy Corrected Code</button>
             </div>
