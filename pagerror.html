@@ -55,20 +55,19 @@
         &lt;res-auth&gt;Container&lt;/res-auth&gt;
         &lt;res-sharing-scope&gt;Shareable&lt;/res-sharing-scope&gt;
     &lt;/resource-ref&gt;
-    <p class="error-line"> --missing code--</p>
                 </pre>
             </div>
             <div class="code-box">
                 <span class="code-label">web.xml</span> 
                 <h2 id="correctedback">New Code</h2>
                 <pre id="correctedCode" class="code-display">
-    &lt;resource-ref id="ResourceRef_1410373441333"&gt;
+    &lt;resource-ref id="ResourceRef_1410373441332"&gt;
         &lt;description/&gt;
-        &lt;res-ref-name&gt;eis/CICSConnectionFactoryRef&lt;/res-ref-name&gt;
-        &lt;res-type&gt;javax.resource.cci.ConnectionFactory&lt;/res-type&gt;
+        &lt;res-ref-name&gt;jdbc/dspApplication&lt;/res-ref-name&gt;
+        &lt;res-type&gt;javax.sql.DataSource&lt;/res-type&gt;
         &lt;res-auth&gt;Container&lt;/res-auth&gt;
         &lt;res-sharing-scope&gt;Shareable&lt;/res-sharing-scope&gt;
-    &lt;/resource-ref&gt; 
+    &lt;/resource-ref&gt;
     <span class="corrected-line">
     &lt;session-config&gt;
         &lt;session-timeout&gt;20&lt;/session-timeout&gt;
